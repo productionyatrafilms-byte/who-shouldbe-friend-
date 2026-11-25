@@ -1,0 +1,51 @@
+/* virtues page: single vertical slider (frames 50-525 / 50-4178) */
+.stage { overflow: hidden; }
+.slide-panel { opacity: 1; }
+.slide-box { pointer-events: auto; top: 28.5648%; left: 10.5469%; }
+.text-box { top: 40.0463%; }
+.arrow-up { top: 46.2546%; }
+.arrow-down { top: 57.7694%; }
+
+/* arrow to the Pranam page: shown on the last slide only; on the nav pills' row, 5% from the right edge */
+.pranam-arrow {
+    position: absolute;
+    right: 5%;
+    top: 87.7037%;
+    width: 9.375%;
+    line-height: 0;
+    z-index: 20;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    animation: pranam-arrow-bob 1.6s ease-in-out infinite;
+}
+
+.pranam-arrow.is-visible { opacity: 1; pointer-events: auto; }
+
+.pranam-arrow-image { width: 100%; height: auto; display: block; }
+
+.pranam-arrow-label {
+    position: absolute;
+    left: 38%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Baloo", sans-serif;
+    font-weight: 700;
+    font-size: 1.45vw;
+    line-height: 1.8vw;
+    color: var(--white);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.pranam-arrow-label .hindi,
+.pranam-arrow-label .gujrati { font-weight: 700; }
+
+@keyframes pranam-arrow-bob {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(0.625vw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pranam-arrow { animation: none; }
+}

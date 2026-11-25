@@ -1,0 +1,233 @@
+/* types page: list view and detail view (body/stage class is-detail) */
+.stage { overflow: hidden; }
+
+.view-list, .view-detail { transition: opacity 0.5s var(--ease), transform 0.5s var(--ease); }
+.view-detail { opacity: 0; pointer-events: none; }
+.is-detail .view-list { opacity: 0; pointer-events: none; }
+.is-detail .view-detail { opacity: 1; pointer-events: auto; }
+.stage:not(.is-detail) .view-detail { opacity: 0; pointer-events: none; }
+.is-detail .arrow-btn.is-disabled { opacity: 0.5; pointer-events: none; }
+
+.type-card {
+    position: absolute;
+    width: 27.9285%;
+    aspect-ratio: 1;
+    z-index: 10;
+}
+
+.type-card-face {
+    position: absolute;
+    left: 9.175%;
+    top: 9.175%;
+    width: 81.65%;
+    aspect-ratio: 1;
+    border: 0.5729vw solid var(--white);
+    border-radius: 2.3438vw;
+    box-shadow: 0 0.5208vw 0.5vw 0.2083vw var(--soft-shadow);
+    background: linear-gradient(to bottom, var(--yellow), var(--orange));
+    overflow: hidden;
+    transition: transform 0.3s var(--ease);
+}
+
+.type-card:hover, .type-card:focus-visible { z-index: 15; }
+
+.type-card-image { position: absolute; width: 100%; height: auto; }
+
+.type-pill {
+    position: absolute;
+    top: 84.8102%;
+    width: 19.1042%;
+    aspect-ratio: 366.8 / 75.67;
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 1.9703vw;
+    box-shadow: 0 0.5208vw 0.5208vw 0 var(--soft-shadow);
+    z-index: 10;
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+/* resting white; a #8949dc circle grows from the centre on hover */
+.type-pill::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 110%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #8949dc;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s var(--ease);
+}
+.type-pill:hover::before, .type-pill:focus-visible::before { transform: translate(-50%, -50%) scale(1); }
+.type-pill:hover .type-pill-text, .type-pill:focus-visible .type-pill-text { color: var(--white); }
+
+.type-pill-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Imbue", serif;
+    font-size: 2.5vw;
+    line-height: 3vw;
+    color: var(--purple);
+    white-space: nowrap;
+    text-align: center;
+    z-index: 1;
+    transition: color 0.3s var(--ease) 0.15s;
+}
+
+.type-pill-text .hindi, .type-pill-text .gujrati { font-size: 2.1875vw; }
+
+/* the number tabs start at x 1824: keep the description clear of them (text box 1101 -> 1781) */
+.text-box { width: 35.4167%; aspect-ratio: 680 / 342; }
+.text-swiper { aspect-ratio: 680 / 342; }
+
+.type-tab {
+    position: absolute;
+    left: 95.0245%;
+    width: 14.7969%;
+    aspect-ratio: 284.1 / 75.9;
+    background-color: var(--white);
+    border-radius: 1.9766vw 0 0 1.9766vw;
+    filter: drop-shadow(0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25));
+    z-index: 20;
+    transition: transform 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+
+.type-tab:hover, .type-tab:focus-visible { transform: translateX(-10.865vw); }
+
+.type-tab-number {
+    position: absolute;
+    left: 2.12%;
+    top: 7.76%;
+    width: 22.56%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Momo Trust Display", sans-serif;
+    font-size: 1.875vw;
+    line-height: 2.099vw;
+    color: var(--white);
+}
+
+.type-tab-label {
+    position: absolute;
+    left: 26%;
+    top: 0;
+    bottom: 0;
+    width: 72%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Abhaya Libre", serif;
+    font-weight: 800;
+    font-size: 1.05vw;
+    line-height: 1.24vw;
+    color: var(--purple-tab);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+}
+
+.type-tab:hover .type-tab-label, .type-tab:focus-visible .type-tab-label { opacity: 1; }
+
+.type-tab.is-active { opacity: 1; }
+
+.slide-panel { opacity: 0; transition: opacity 0.5s var(--ease); }
+.is-detail .slide-panel.is-active { opacity: 1; }
+.is-detail .slide-panel.is-active .slide-box { pointer-events: auto; }
+.card-service { left: 4.0979%; top: 27.7407%; }
+.card-service .type-card-face { transform: rotate(15deg); }
+.card-service:hover .type-card-face, .card-service:focus-visible .type-card-face { transform: rotate(0deg) scale(1.05); }
+.card-service .type-card-image { left: -0.02%; top: 2.32%; }
+.stage:has(.card-service:hover) .pill-service::before, .stage:has(.card-service:focus-visible) .pill-service::before { transform: translate(-50%, -50%) scale(1); }
+.stage:has(.card-service:hover) .pill-service .type-pill-text, .stage:has(.card-service:focus-visible) .pill-service .type-pill-text { color: var(--white); }
+.card-virtues-loving { left: 25.2745%; top: 27.2991%; }
+.card-virtues-loving .type-card-face { transform: rotate(-15deg); }
+.card-virtues-loving:hover .type-card-face, .card-virtues-loving:focus-visible .type-card-face { transform: rotate(0deg) scale(1.05); }
+.card-virtues-loving .type-card-image { left: -2.9%; top: -0.06%; }
+.stage:has(.card-virtues-loving:hover) .pill-virtues-loving::before, .stage:has(.card-virtues-loving:focus-visible) .pill-virtues-loving::before { transform: translate(-50%, -50%) scale(1); }
+.stage:has(.card-virtues-loving:hover) .pill-virtues-loving .type-pill-text, .stage:has(.card-virtues-loving:focus-visible) .pill-virtues-loving .type-pill-text { color: var(--white); }
+.card-satsang { left: 46.451%; top: 27.7824%; }
+.card-satsang .type-card-face { transform: rotate(15deg); }
+.card-satsang:hover .type-card-face, .card-satsang:focus-visible .type-card-face { transform: rotate(0deg) scale(1.05); }
+.card-satsang .type-card-image { left: -0.05%; top: 7.71%; }
+.stage:has(.card-satsang:hover) .pill-satsang::before, .stage:has(.card-satsang:focus-visible) .pill-satsang::before { transform: translate(-50%, -50%) scale(1); }
+.stage:has(.card-satsang:hover) .pill-satsang .type-pill-text, .stage:has(.card-satsang:focus-visible) .pill-satsang .type-pill-text { color: var(--white); }
+.card-purity { left: 67.488%; top: 27.2991%; }
+.card-purity .type-card-face { transform: rotate(-15deg); }
+.card-purity:hover .type-card-face, .card-purity:focus-visible .type-card-face { transform: rotate(0deg) scale(1.05); }
+.card-purity .type-card-image { left: -0.03%; top: 6.77%; }
+.stage:has(.card-purity:hover) .pill-purity::before, .stage:has(.card-purity:focus-visible) .pill-purity::before { transform: translate(-50%, -50%) scale(1); }
+.stage:has(.card-purity:hover) .pill-purity .type-pill-text, .stage:has(.card-purity:focus-visible) .pill-purity .type-pill-text { color: var(--white); }
+.pill-service { left: 6.6391%; }
+.pill-virtues-loving { left: 29.2193%; }
+.pill-satsang { left: 51.7995%; }
+.pill-purity { left: 74.3797%; }
+.tab-1 { top: 36.663%; }
+.tab-2 { top: 46.1694%; }
+.tab-3 { top: 55.6759%; }
+.tab-4 { top: 65.1815%; }
+.view-list.type-tab, .type-tab { transform: translateX(0); }
+.stage:not(.is-detail) .type-tab { transform: translateX(5.2vw); opacity: 0; pointer-events: none; }
+.is-detail .type-tab:hover, .is-detail .type-tab:focus-visible { transform: translateX(-10.865vw); }
+
+.nav-pill { overflow: hidden; }
+.nav-pill-text { z-index: 1; }
+.nav-pill::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 110%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--nav-active);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s var(--ease);
+}
+.nav-pill:hover::before, .nav-pill:focus-visible::before { transform: translate(-50%, -50%) scale(1); }
+.nav-pill:hover, .nav-pill:focus-visible { transform: none; }
+
+.detail-back { position: absolute; left: 3.3438%; top: 5.3426%; width: 2.6904%; aspect-ratio: 1; z-index: 30; line-height: 0; }
+.detail-back img { position: absolute; left: -7.74%; top: 0; width: 115.48%; height: auto; transition: transform 0.3s var(--ease); }
+.detail-back:hover img { transform: scale(1.1); }
+
+/* load animation: cards start half fanned out (halfway to their spots, half the tilt), invisible, then fade in and finish fanning */
+.is-gathered .card-service { left: 20.0698%; top: 27.6204%; opacity: 0; }
+.is-gathered .card-service .type-card-face { transform: rotate(7.5deg); }
+.is-gathered .card-virtues-loving { left: 30.6578%; top: 27.3991%; opacity: 0; }
+.is-gathered .card-virtues-loving .type-card-face { transform: rotate(-7.5deg); }
+.is-gathered .card-satsang { left: 41.2464%; top: 27.6407%; opacity: 0; }
+.is-gathered .card-satsang .type-card-face { transform: rotate(7.5deg); }
+.is-gathered .card-purity { left: 51.7646%; top: 27.3991%; opacity: 0; }
+.is-gathered .card-purity .type-card-face { transform: rotate(-7.5deg); }
+.is-fanning .type-card { transition: left 1s var(--join), top 1s var(--join), opacity 0.8s var(--ease); }
+.is-fanning .type-card-face { transition: transform 1s var(--join); }
+.is-fanning .card-service, .is-fanning .card-service .type-card-face { transition-delay: 0s; }
+.is-fanning .card-virtues-loving, .is-fanning .card-virtues-loving .type-card-face { transition-delay: 0.07s; }
+.is-fanning .card-satsang, .is-fanning .card-satsang .type-card-face { transition-delay: 0.14s; }
+.is-fanning .card-purity, .is-fanning .card-purity .type-card-face { transition-delay: 0.21s; }
+
+/* exit animation: cards fan back in and slide down together with the pills */
+.is-leaving .view-list, .is-leaving .back-btn { pointer-events: none; }
+.is-leaving .type-card { transition: left 0.85s var(--ease), top 0.85s var(--ease), opacity 0.85s var(--ease); transition-delay: 0s; }
+.is-leaving .type-card-face { transition: transform 0.85s var(--ease); transition-delay: 0s; }
+.is-leaving .type-pill { transform: translateY(30vw); transition: transform 0.85s var(--ease); transition-delay: 0s; }
+.is-leaving .card-service { left: 20.0698%; top: 101.8519%; }
+.is-leaving .card-service .type-card-face { transform: rotate(7.5deg); }
+.is-leaving .card-virtues-loving { left: 30.6578%; top: 101.8519%; }
+.is-leaving .card-virtues-loving .type-card-face { transform: rotate(-7.5deg); }
+.is-leaving .card-satsang { left: 41.2464%; top: 101.8519%; }
+.is-leaving .card-satsang .type-card-face { transform: rotate(7.5deg); }
+.is-leaving .card-purity { left: 51.7646%; top: 101.8519%; }
+.is-leaving .card-purity .type-card-face { transform: rotate(-7.5deg); }

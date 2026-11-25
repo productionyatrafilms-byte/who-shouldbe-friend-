@@ -1,0 +1,5 @@
+/* who page: frame 19:955 */
+.stage { overflow: hidden; }
+.slide-box { left: 7.474%; top: 28.5648%; pointer-events: auto; }
+.who-text-wrap { position: absolute; left: 54.2214%; top: 56.1574%; width: 38.3365%; transform: translateY(-50%); z-index: 10; transition: opacity 0.5s var(--ease); }
+.who-text { display: block; }

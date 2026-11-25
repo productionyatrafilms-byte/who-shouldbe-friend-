@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Different Types of Friend</title>
+    <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/types.css">
+</head>
+
+<body id="body" data-exit-handled>
+
+    <div id="langSelect">
+        <div id="language">
+            <label><input type="radio" onclick="val('English')" name="lang" id="en" value="English">
+                <span>E</span>
+            </label>
+            <label><input type="radio" onclick="val('Hindi')" name="lang" id="hi" value="Hindi">
+                <span>H</span>
+            </label>
+            <label><input type="radio" onclick="val('Gujrati')" name="lang" id="gu" value="Gujrati">
+                <span>G</span>
+            </label>
+        </div>
+    </div>
+
+    <img class="page-bg" src="./assets/images/background.jpg" alt="">
+
+    <div class="main-container">
+        <div class="stage is-gathered">
+            <img class="stage-spacer" src="./assets/images/stage-spacer.png" alt="">
+            <div class="frame-border"></div>
+            <a class="back-btn view-list" href="index.html"><img src="./assets/images/icon-home.png" alt="Home"></a>
+            <div class="title-pill"><div class="title-window">
+                    <p class="title-slide is-active" data-title="list" data-lines="types.listTitle" data-line-class="title-line" data-accent="title-line-accent"></p>
+                    <p class="title-slide" data-title="0" data-lines="types.items.0.title" data-line-class="title-line" data-accent="title-line-accent"></p>
+                    <p class="title-slide" data-title="1" data-lines="types.items.1.title" data-line-class="title-line" data-accent="title-line-accent"></p>
+                    <p class="title-slide" data-title="2" data-lines="types.items.2.title" data-line-class="title-line" data-accent="title-line-accent"></p>
+                    <p class="title-slide" data-title="3" data-lines="types.items.3.title" data-line-class="title-line" data-accent="title-line-accent"></p>
+                </div></div>
+            <button class="type-card card-service view-list" type="button" data-open-type="0"><span class="type-card-face"><img class="type-card-image" src="./assets/images/card-service.png" alt="Service loving friend"></span></button>
+            <button class="type-card card-virtues-loving view-list" type="button" data-open-type="1"><span class="type-card-face"><img class="type-card-image" src="./assets/images/card-virtues-loving.png" alt="Virtues loving friend"></span></button>
+            <button class="type-card card-satsang view-list" type="button" data-open-type="2"><span class="type-card-face"><img class="type-card-image" src="./assets/images/card-satsang.png" alt="Satsang loving friend"></span></button>
+            <button class="type-card card-purity view-list" type="button" data-open-type="3"><span class="type-card-face"><img class="type-card-image" src="./assets/images/card-purity.png" alt="Purity loving friend"></span></button>
+            <button class="type-pill pill-service view-list" type="button" data-open-type="0"><span class="type-pill-text" data-text="types.items.0.label"></span></button>
+            <button class="type-pill pill-virtues-loving view-list" type="button" data-open-type="1"><span class="type-pill-text" data-text="types.items.1.label"></span></button>
+            <button class="type-pill pill-satsang view-list" type="button" data-open-type="2"><span class="type-pill-text" data-text="types.items.2.label"></span></button>
+            <button class="type-pill pill-purity view-list" type="button" data-open-type="3"><span class="type-pill-text" data-text="types.items.3.label"></span></button>
+            <div class="slide-panels" data-panels="types"></div>
+            <button class="arrow-btn arrow-up view-detail" type="button" aria-label="Previous"><img src="./assets/images/arrow-up.png" alt=""></button>
+            <button class="arrow-btn arrow-down view-detail" type="button" aria-label="Next"><img src="./assets/images/arrow-down.png" alt=""></button>
+            <button class="type-tab tab-1" type="button"><span class="type-tab-number">1</span><span class="type-tab-label" data-text="types.items.0.label"></span></button>
+            <button class="type-tab tab-2" type="button"><span class="type-tab-number">2</span><span class="type-tab-label" data-text="types.items.1.label"></span></button>
+            <button class="type-tab tab-3" type="button"><span class="type-tab-number">3</span><span class="type-tab-label" data-text="types.items.2.label"></span></button>
+            <button class="type-tab tab-4" type="button"><span class="type-tab-number">4</span><span class="type-tab-label" data-text="types.items.3.label"></span></button>
+            <a class="nav-pill nav-who view-detail" href="who.html"><span class="nav-pill-text" data-lines="nav.who" data-line-class="nav-line"></span></a>
+            <a class="nav-pill nav-types is-active view-detail" href="types.html"><span class="nav-pill-text" data-lines="nav.types" data-line-class="nav-line"></span></a>
+            <a class="nav-pill nav-virtues view-detail" href="virtues.html"><span class="nav-pill-text" data-lines="nav.virtues" data-line-class="nav-line"></span></a>
+            <button class="detail-back view-detail" type="button" aria-label="Back to types"><img src="./assets/images/who-back.png" alt="Back"></button>
+        </div>
+    </div>
+
+    <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.7.1.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/types.js"></script>
+</body>
+
+</html>

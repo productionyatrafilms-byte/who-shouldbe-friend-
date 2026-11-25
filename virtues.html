@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtues of a Friend</title>
+    <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/virtues.css">
+</head>
+
+<body id="body" class="is-entering">
+
+    <div id="langSelect">
+        <div id="language">
+            <label><input type="radio" onclick="val('English')" name="lang" id="en" value="English">
+                <span>E</span>
+            </label>
+            <label><input type="radio" onclick="val('Hindi')" name="lang" id="hi" value="Hindi">
+                <span>H</span>
+            </label>
+            <label><input type="radio" onclick="val('Gujrati')" name="lang" id="gu" value="Gujrati">
+                <span>G</span>
+            </label>
+        </div>
+    </div>
+
+    <img class="page-bg" src="./assets/images/background.jpg" alt="">
+
+    <div class="main-container">
+        <div class="stage">
+            <img class="stage-spacer" src="./assets/images/stage-spacer.png" alt="">
+            <div class="frame-border"></div>
+            <a class="back-btn" href="index.html"><img src="./assets/images/icon-home.png" alt="Home"></a>
+            <div class="title-pill"><div class="title-window">
+                    <p class="title-slide is-active" data-title="virtues" data-lines="virtues.title" data-line-class="title-line" data-accent="title-line-accent"></p>
+                </div></div>
+            <div class="slide-panels" data-panels="virtues"></div>
+            <button class="arrow-btn arrow-up" type="button" aria-label="Previous"><img src="./assets/images/arrow-up.png" alt=""></button>
+            <button class="arrow-btn arrow-down" type="button" aria-label="Next"><img src="./assets/images/arrow-down.png" alt=""></button>
+            <a class="nav-pill nav-who" href="who.html"><span class="nav-pill-text" data-lines="nav.who" data-line-class="nav-line"></span></a>
+            <a class="nav-pill nav-types" href="types.html"><span class="nav-pill-text" data-lines="nav.types" data-line-class="nav-line"></span></a>
+            <a class="nav-pill nav-virtues is-active" href="virtues.html"><span class="nav-pill-text" data-lines="nav.virtues" data-line-class="nav-line"></span></a>
+
+            <a class="pranam-arrow" href="pranam.html" aria-label="Go to Pranam"><img class="pranam-arrow-image" src="./assets/images/pranam-arrow.png" alt=""><span class="pranam-arrow-label" data-text="pranam.title"></span></a>
+        </div>
+    </div>
+
+    <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/jquery-3.7.1.js"></script>
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/virtues.js"></script>
+</body>
+
+</html>

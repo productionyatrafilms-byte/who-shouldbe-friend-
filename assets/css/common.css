@@ -1,0 +1,350 @@
+
+@font-face { font-family: "Luckiest Guy"; src: url("../../fonts/LuckiestGuy-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bangers"; src: url("../../fonts/Bangers-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Imbue"; src: url("../../fonts/Imbue-Variable.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Baloo"; src: url("../../fonts/Baloo2-Variable.ttf") format("truetype"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Baloo Bhai"; src: url("../../fonts/BalooBhai2-Variable.ttf") format("truetype"); font-weight: 400 800; font-display: swap; }
+@font-face { font-family: "Allan"; src: url("../../fonts/Allan-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Abhaya Libre"; src: url("../../fonts/AbhayaLibre-ExtraBold.ttf") format("truetype"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Momo Trust Display"; src: url("../../fonts/MomoTrustDisplay-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+
+:root {
+    --purple: #8d40f2;
+    --purple-tab: #8a38f5;
+    --yellow: #ffda7d;
+    --orange: #ff9666;
+    --white: #ffffff;
+    --nav-idle: #be8cff;
+    --nav-active: #8949dc;
+    --nav-shadow: #8655ff;
+    --soft-shadow: rgba(103, 30, 181, 0.5);
+    --page-bg-color: #b08cff;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --join: cubic-bezier(0.34, 1.25, 0.64, 1);
+    --move: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html, body { overflow-x: hidden; max-width: 100%; }
+
+body { background-color: var(--page-bg-color); }
+
+a { color: inherit; text-decoration: none; }
+
+button { border: 0; padding: 0; background: none; font: inherit; color: inherit; cursor: pointer; }
+
+.english, .hindi, .gujrati { display: inline; }
+
+/* Hindi and Gujarati text: Baloo family, bold */
+.hindi { font-family: "Baloo", sans-serif; font-weight: 800; }
+.gujrati { font-family: "Baloo Bhai", "Baloo", sans-serif; font-weight: 800; }
+
+.no-transition, .no-transition * { transition: none !important; }
+
+/* white frame border of the Figma frame, drawn over everything */
+.frame-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+    border: 1.0417vw solid var(--white);
+    border-radius: 1.0938vw;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* home button */
+.back-btn {
+    position: absolute;
+    left: 3.125%;
+    top: 5.2315%;
+    width: 3.125%;
+    aspect-ratio: 60 / 54;
+    z-index: 30;
+    line-height: 0;
+    transition: transform 0.9s var(--ease);
+}
+
+.back-btn img {
+    position: absolute;
+    left: -6.67%;
+    top: 0;
+    width: 113.33%;
+    height: auto;
+}
+
+/* language switch, restyled to the Figma pill */
+#langSelect {
+    left: 89.1667vw;
+    top: 2.8646vw;
+    right: auto;
+    width: 7.9688vw;
+    z-index: 999999;
+}
+
+#langSelect #language {
+    width: 100%;
+    background-color: var(--white);
+    border: 0.1042vw solid var(--purple);
+    border-radius: 12.6042vw;
+    padding: 0.3125vw 0.3646vw;
+    justify-content: space-between;
+    box-shadow: 0 0.2083vw 0.1042vw rgba(0, 0, 0, 0.25);
+}
+
+#langSelect #language label { padding: 0; cursor: pointer; }
+
+#langSelect #language label span { transition: background 0.2s var(--ease), color 0.2s var(--ease); }
+
+#langSelect #language label span {
+    width: 2.0833vw;
+    aspect-ratio: 1;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1042vw solid var(--purple);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--purple);
+    font-family: "Baloo", sans-serif;
+    font-size: 1.5625vw;
+    line-height: 2.0833vw;
+}
+
+#langSelect #language input:checked + span {
+    background: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+
+#langSelect #language label:hover span { background: rgba(141, 64, 242, 0.15); }
+
+#langSelect #language input:checked + span:hover { background: var(--purple); }
+
+/* title pill */
+.title-pill {
+    position: absolute;
+    left: 30.5833%;
+    top: 5.7407%;
+    width: 38.8333%;
+    aspect-ratio: 745.6 / 151;
+    border: 0.3646vw solid var(--white);
+    border-radius: 2.3438vw;
+    box-shadow: 0 0.2083vw 0.2083vw 0 var(--soft-shadow);
+    z-index: 20;
+}
+
+.title-window {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 731 / 137;
+    border-radius: 1.9271vw;
+    overflow: hidden;
+}
+
+.title-slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 731 / 137;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 2.3958vw;
+    line-height: 2.3958vw;
+    color: var(--white);
+    text-shadow: 0.4167vw 0 0.4167vw var(--soft-shadow);
+    opacity: 0;
+    transform: translateY(2.0833vw);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    white-space: nowrap;
+}
+
+.title-slide.is-active { opacity: 1; transform: none; }
+
+/* the title is a single line: the words sit side by side, the last one in the accent colour */
+.title-line + .title-line { margin-left: 0.5208vw; }
+
+.title-line { display: block; }
+
+.title-line-accent { color: var(--yellow); }
+
+/* bottom navigation pills */
+.nav-pill {
+    position: absolute;
+    top: 88.2954%;
+    width: 11.8215%;
+    aspect-ratio: 226.973 / 81.423;
+    background-color: var(--nav-idle);
+    border: 0.1562vw solid var(--white);
+    border-radius: 2.6042vw;
+    filter: drop-shadow(0 0.2083vw 0.1042vw var(--nav-shadow));
+    z-index: 20;
+    transition: transform 0.3s var(--ease);
+}
+
+.nav-pill:hover { transform: scale(1.05); }
+
+.nav-pill.is-active { background-color: var(--nav-active); }
+
+.nav-who { left: 29.9109%; }
+.nav-types { left: 44.0979%; }
+.nav-virtues { left: 58.2854%; }
+
+.nav-pill-text {
+    position: absolute;
+    left: 2.09%;
+    right: 2.09%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: "Allan", cursive;
+    font-size: 1.875vw;
+    line-height: 1.4323vw;
+    color: var(--white);
+    text-shadow: 0 0.0521vw 0 rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+}
+
+.nav-line { display: block; }
+.nav-line .hindi, .nav-line .gujrati { font-size: 1.5625vw; position: relative; top: -0.1146vw; }
+
+/* Baloo sits low in its line box: lift Hindi / Gujarati so they look vertically centred */
+.title-slide .hindi, .title-slide .gujrati { font-size: 2.2917vw; }
+.title-slide .hindi { position: relative; top: -0.1354vw; }
+.title-slide .gujrati { position: relative; top: -0.1979vw; }
+.slide-text .hindi { position: relative; top: -0.1042vw; line-height: 3.4vw; }
+.slide-text .gujrati { position: relative; top: -0.1562vw; line-height: 3.4vw; }
+.slide-text-center .hindi { position: relative; top: -0.2083vw; line-height: 6.6vw; }
+.slide-text-center .gujrati { position: relative; top: -0.3125vw; line-height: 6.6vw; }
+
+/* slide arrows */
+.arrow-btn {
+    position: absolute;
+    left: 3.9583%;
+    width: 4.5833%;
+    aspect-ratio: 88 / 89;
+    z-index: 20;
+    line-height: 0;
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.arrow-btn img {
+    position: absolute;
+    left: -3.37%;
+    top: -1.14%;
+    width: 110.23%;
+    height: auto;
+}
+
+.arrow-up { top: 46.3009%; }
+.arrow-down { top: 57.5731%; }
+
+.arrow-btn:hover { transform: scale(1.08); }
+
+.arrow-btn.is-disabled { opacity: 0.5; pointer-events: none; }
+
+/* page load entrance (who + virtues): content fades in, title lifts into place */
+.is-entering .title-slide { opacity: 0; transform: translateY(2.0833vw); }
+.is-entering .slide-box,
+.is-entering .text-box,
+.is-entering .slide-panel,
+.is-entering .who-text-wrap,
+.is-entering .who-back,
+.is-entering .arrow-btn,
+.is-entering .nav-pill { opacity: 0; pointer-events: none; }
+
+.slide-box, .text-box { transition: opacity 0.5s var(--ease); }
+.nav-pill { transition: transform 0.3s var(--ease), opacity 0.5s var(--ease); }
+
+/* image + text slider boxes */
+.slide-box {
+    position: absolute;
+    left: 10.5438%;
+    top: 28.6111%;
+    width: 44.7917%;
+    aspect-ratio: 860 / 590;
+    background-color: #a0a0a0;
+    border: 0.4167vw solid var(--white);
+    border-radius: 1.5625vw;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.image-swiper, .text-swiper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 844 / 574;
+}
+
+.image-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-image {
+    flex: none;
+    width: 126%;
+    height: auto;
+    display: block;
+}
+
+.slide-image-fit { width: 100%; }
+
+.text-box {
+    position: absolute;
+    left: 57.3438%;
+    top: 40.0926%;
+    width: 38.8021%;
+    aspect-ratio: 745 / 342;
+    pointer-events: none;
+}
+
+.text-swiper { aspect-ratio: 745 / 342; }
+
+.text-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-text {
+    width: 100%;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 2.5vw;
+    line-height: 2.4531vw;
+    color: var(--white);
+    text-shadow: 0 0.2083vw 0 #5a1fb8, 0 0.1vw 0.4vw rgba(60, 10, 130, 0.55), 0 0.25vw 0.6vw rgba(0, 0, 0, 0.3);
+}
+
+.slide-text-center {
+    text-align: center;
+    font-size: 5vw;
+    line-height: 4.901vw;
+}
+
+.slide-panels { display: contents; }
+
+.slide-panel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+    pointer-events: none;
+    z-index: 10;
+}
